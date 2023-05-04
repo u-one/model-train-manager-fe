@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { TrainModel } from "../types/TrainModel";
-import { trainModelApi } from "../libs/webapiClient";
+import { inventoryApi } from "../libs/webapiClient";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -36,8 +36,8 @@ const Inventory = () => {
     const [trains, setTrains] = useState<TrainResponse>()
 
     useEffect(() => {
-        trainModelApi.get<TrainResponse>("/all").then((reponse) => {
-            setTrains(reponse.data)
+        inventoryApi.get<TrainResponse>("/all").then((response) => {
+            setTrains(response.data)
         }).catch((error) => {
         console.error("Request URL: ", error.config.url);
         console.error("Error: ", error);
@@ -46,7 +46,7 @@ const Inventory = () => {
 
     return (
         <div>
-            <h1>Trains</h1>
+            <h1>Inventory</h1>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                     <TableHead>

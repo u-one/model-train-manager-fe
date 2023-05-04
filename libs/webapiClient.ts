@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-export const trainModelApi = axios.create(
+export const inventoryApi = axios.create(
     {
-        baseURL: "/api/trainmodel",
+        baseURL: "/api/inventory",
         responseType: "json",
         headers: {
             "Content-Type": "application/json",
