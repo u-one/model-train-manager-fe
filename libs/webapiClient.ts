@@ -17,3 +17,8 @@ export const modelTrainApi = axios.create(
             "Content-Type": "application/json",
         }
     });
+
+modelTrainApi.interceptors.request.use((config) => {
+    console.log(config.url)
+    return config;
+}, (error) => { return Promise.reject(error); });

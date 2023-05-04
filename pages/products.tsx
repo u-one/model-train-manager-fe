@@ -9,8 +9,13 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
+import Link from 'next/link'
+
+
 import { Product } from "../types/Product";
 import { modelTrainApi } from "../libs/webapiClient";
+
+import { toTagChips } from "@/libs/tags";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -63,10 +68,12 @@ const Products = () => {
                             <StyledTableCell align="right">発売日</StyledTableCell>
                             <StyledTableCell align="right">タグ</StyledTableCell>
                             <StyledTableCell align="right">アイコン</StyledTableCell>
+                            <StyledTableCell align="right"></StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {products?.map((product) => (
+                            
                             <StyledTableRow>
                                 <TableCell align="right">{product.maker}</TableCell>
                                 <TableCell align="right">{product.productCode}</TableCell>
@@ -75,8 +82,11 @@ const Products = () => {
                                 <TableCell align="right">{product.price}</TableCell>
                                 <TableCell align="right">{product.jan}</TableCell>
                                 <TableCell align="right">{product.releaseDate}</TableCell>
-                                <TableCell align="right">{product.tags}</TableCell>
+                                <TableCell align="right">{toTagChips(product.tags)}</TableCell>
                                 <TableCell align="right">{product.icon}</TableCell>
+                                <TableCell align="right">
+                                    <Link href={`/product/${product.maker}/${product.productCode}`}>詳細</Link>
+                                </TableCell>
                             </StyledTableRow>
                         ))}
                     </TableBody>

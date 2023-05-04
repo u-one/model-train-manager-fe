@@ -69,7 +69,7 @@ const Inventory = () => {
                             <StyledTableCell align="right">管理ID</StyledTableCell>
                             <StyledTableCell align="right">コメント</StyledTableCell>
                             <StyledTableCell align="right">タグ</StyledTableCell>
-                            <StyledTableCell align="right"></StyledTableCell>
+                            <StyledTableCell align="right">-</StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
