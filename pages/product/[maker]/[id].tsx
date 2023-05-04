@@ -36,7 +36,7 @@ const toChips = (tags: string) => {
     return (
     <Stack direction="row" spacing={1}>
         {tagArray.map((tag) => (
-            <Chip label={tag} />
+            <Chip key={tag} label={tag} />
         ))}
     </Stack>
     )

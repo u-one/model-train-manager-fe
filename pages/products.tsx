@@ -73,8 +73,7 @@ const Products = () => {
                     </TableHead>
                     <TableBody>
                         {products?.map((product) => (
-                            
-                            <StyledTableRow>
+                            <StyledTableRow key={product.productCode}>
                                 <TableCell align="right">{product.maker}</TableCell>
                                 <TableCell align="right">{product.productCode}</TableCell>
                                 <TableCell align="right">{product.productType}</TableCell>
