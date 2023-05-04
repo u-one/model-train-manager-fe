@@ -7,6 +7,10 @@ const Home = () => {
         <li>
           <a href="./inventory">Inventory</a>
         </li>
+        <li>
+          <a href="./products">Products</a>
+        </li>
+
       </ul>
     </main>
   )

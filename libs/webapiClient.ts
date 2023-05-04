@@ -8,3 +8,12 @@ export const inventoryApi = axios.create(
             "Content-Type": "application/json",
         }
     });
+
+export const modelTrainApi = axios.create(
+    {
+        baseURL: "/api",
+        responseType: "json",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    });
