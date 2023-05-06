@@ -17,5 +17,6 @@ export type TrainModel = {
     obtainedType: number,
     manageId: string,
     comment: string,
-    tags: string
+    tags: string,
+    imageUrls: string[],
 }

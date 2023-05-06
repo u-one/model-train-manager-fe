@@ -72,7 +72,7 @@ const Products = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {products?.map((product) => (
+                        {products?.filter((product) => (product.productType!=3)).map((product) => (
                             <StyledTableRow key={product.productCode}>
                                 <TableCell align="right">{product.maker}</TableCell>
                                 <TableCell align="right">{product.productCode}</TableCell>

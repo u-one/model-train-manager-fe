@@ -9,6 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { TrainModel } from "../types/TrainModel";
 import { inventoryApi } from "../libs/webapiClient";
+import Link from 'next/link'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -95,6 +96,9 @@ const Inventory = () => {
                                 <TableCell align="right">{row.manageId}</TableCell>
                                 <TableCell align="right">{row.comment}</TableCell>
                                 <TableCell align="right">{row.tags}</TableCell>
+                                <TableCell align="right">
+                                    <Link href={`/inventory/${row.trainModelId}`}>詳細</Link>
+                                </TableCell>
                             </StyledTableRow>
                         ))}
                     </TableBody>
