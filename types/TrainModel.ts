@@ -1,3 +1,7 @@
+export type Image = {
+    id: string,
+    url: string
+}
 
 export type TrainModel = {
     trainModelId: number,
@@ -19,4 +23,5 @@ export type TrainModel = {
     comment: string,
     tags: string,
     imageUrls: string[],
+    images: Image[]
 }

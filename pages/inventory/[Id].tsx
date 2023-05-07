@@ -92,10 +92,10 @@ const InventoryItem = (props: Props) => {
             <TableContainer sx={{maxWidth:650}} component={Paper}>
                 <Table size="small" aria-label="simple table">
                     <TableBody>
-                        {item.imageUrls.map((imageUrl: string) => (
-                            <TableRow key={imageUrl}>
+                        {item.images.map((image) => (
+                            <TableRow key={image.id}>
                                 <TableCell align="left">
-                                    <img src={imageUrl} width="300px" />
+                                    <img src={image.url} width="300px" />
                                 </TableCell>
                             </TableRow>
                         ))}
